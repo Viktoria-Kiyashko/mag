@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(155, 155, 155);
+  color: rgb(254, 254, 254);
+  font-family: "Montserrat", serif;
+  font-weight: 300;
+}
+
+.wrapper {
+  width: 1280px;
+  margin: 50px auto;
+}
+
+header{
+  position: relative;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.nav {
+  float: right;
+  list-style: none;
+  display: flex; /* добавляем flex, чтобы li располагались в одну строку */
+  gap: 25px; /* расстояние между элементами списка */
+  transition: opacity 500ms ease;
+}
+
+.nav li {
+  cursor: pointer; /* добавляем курсор "указатель" */
+}
+.nav li:hover{
+  opacity:0.5;
+}
+
+.shop-cart-button {
+  cursor: pointer;
+  transition: color, transform 500ms ease;
+  margin-left: 850px; /* Отступ для корзины */
+  position: relative;
+}
+
+.shop-cart-button:hover {
+  color: #1a6d33;
+}
+.shop-cart-button:active{
+  color: #1a6d33;
+  transform: scale(4.5);
+}
+
+.shop-cart {
+  position: absolute;
+  top: 50px;
+  right: 200px;
+  width: 200px;
+  min-height: 100px;
+  background: #212121;
+  box-shadow: 9px 8px 8px 0px rgba(34, 60, 80, 0.2);
+  z-index: 1000;
+  padding: 10px;
+}
+
+.summa{
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  color: aliceblue;
+  margin-bottom: 20px;
+}
+
+.empty.h2{
+   font-size: 20px;
+   margin-bottom: 20 px;
+   color: aliceblue;
+}
+
+.item .delete-icon {
+  color: rgb(255, 85, 62);
+  float: right;
+  position: relative;
+  top: -25px;
+  cursor: pointer;
+  transition: color 500ms ease, transform 500ms ease;
+}
+
+.item .delete-icon:hover {
+  color: #ff5411;
+  transform: scale(1.6);
+}
+
+
+.shop-cart.item{
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+
+}
+
+.shop-cart .item img {
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+}
+
+.shop-cart .item h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.shop-cart .item p {
+  color: #000000;
+  font-weight: 600;
+}
+
+/*.shop-cart.item img{
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+}
+
+.shop-cart.item .h2{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+ .shop-cart.item p{
+ color: #000000;
+ font-weight: 600;
+ }*/
+
+.presentation {
+  margin: 50px 0;
+  background-color: url('../src/img/baner.jpg') no-repeat;
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-color: rgb(175, 175, 175);
+  position: relative;
+}
+
+.presentation::after {
+  content: 'Лучшие товары для вашего дома';
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  width: 300px;
+  font-size: 40px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+
+.presentation::before {
+  content: 'По низким ценам';
+  position: absolute;
+  top: 250px;
+  left: 50px;
+  width: 300px;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+}
+
+
+.categories div{
+    display: inline-block;
+    background: #bdbdbd;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    margin-right: 15px;
+    font-weight: 300;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 500ms ease;
+}
+
+.categories div:hover{
+  border-color: rgb(171, 171, 171);
+  transform: scale(1.2);
+}
+
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Отступы между карточками */
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.item {
+  flex: 1 1 calc(33.333% - 20px); /* Каждая карточка занимает примерно треть ширины */
+  background: #bdbdbd;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  min-width: 200px;
+  max-width: calc(33.333% - 20px); /* Ограничиваем ширину */
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.full-item {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрирование */
+  background: #5f5f5f76;
+  z-index: 9999;
+  overflow: auto;
+  width: 100%; /* Ширина на 100% для адаптивности */
+  height: 100%; /* Высота на 100% для адаптивности */
+  display: flex; /* Для центрирования содержимого */
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: center; /* Центрирование по горизонтали */
+}
+
+.full-item > div {
+  width: 600px;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 30px;
+  border-radius: 9px;
+  background: #bdbdbd;
+}
+
+.item img, .full-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  transition: transform 500ms ease;
+  cursor: pointer;
+}
+.item img:hover, .full-item img:hover{
+  transform: scale(1.05);
+}
+
+.full-item h2,.full-item p,.full-item b,.full-item  {
+  margin: 10px 20px;
+  color: #333;
+}
+
+b, .full-item b{
+  color: rgb(30, 123, 67);
+}
+
+.add-to-cart,
+.full-item.add-to-cart
+{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #ff5411;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: azure;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 500ms ease;
+}
+
+.add-to-cart:hover,
+.full-item.add-to-cart:hover {
+  transform: scale(1.5) translateY(-5px); /* Увеличение и смещение вверх при наведении */
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 100px;
+}
